@@ -1,12 +1,17 @@
+import { Outlet } from "react-router-dom";
 import Footer from "./Footer";
 import Header from "./Header";
 
 function Applayout() {
   return (
     <>
-      <div className="min-h-dvh grid grid-rows-[auto_1fr_auto]">
+      <div className="h-dvh grid grid-rows-[auto_1fr_auto] overflow-y-scroll">
         <Header />
-        <main className="bg-slate-600">test</main>
+        <main className="">
+          <div>
+            <Outlet />
+          </div>
+        </main>
         <Footer />
       </div>
     </>

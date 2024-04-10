@@ -1,5 +1,7 @@
+import Applayout from "./ui/Applayout";
+
 function App() {
-  return <div className="bg-red-400">App</div>;
+  return <Applayout />;
 }
 
 export default App;

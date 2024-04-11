@@ -5,7 +5,7 @@ import Header from "./Header";
 function Applayout() {
   return (
     <>
-      <div className="h-dvh grid grid-rows-[auto_1fr_auto] overflow-y-scroll">
+      <div className="min-h-dvh grid grid-rows-[auto_1fr_auto] ">
         <Header />
         <main className="">
           <div>

@@ -4,6 +4,7 @@ import Logo from "./Logo";
 import Overlay from "./Overlay";
 import { IoMdClose } from "react-icons/io";
 import { IoMoonOutline } from "react-icons/io5";
+import SearchInput from "./SearchInput";
 
 type mobileNav = {
   display: "mobile";
@@ -20,10 +21,9 @@ type desktopNav = {
 type navProps = mobileNav | desktopNav;
 
 function Nav({ display, isShow, handleCloseNav }: navProps) {
-  console.log(display);
   const mobileRef = useRef<HTMLDivElement>(null);
 
-  useOutsideClick(mobileRef, handleCloseNav);
+  useOutsideClick(mobileRef, handleCloseNav, true);
 
   return (
     <>
@@ -49,6 +49,10 @@ function Nav({ display, isShow, handleCloseNav }: navProps) {
               <IoMdClose />
             </span>
           </div>
+        </div>
+        {/* Nav Links */}
+        <div className="pt-6">
+          <SearchInput />
         </div>
       </div>
       <Overlay isShow={isShow} />

@@ -5,6 +5,7 @@ import Overlay from "./Overlay";
 import { IoMdClose } from "react-icons/io";
 import { IoMoonOutline } from "react-icons/io5";
 import SearchInput from "./SearchInput";
+import NavMenuList from "./NavMenuList";
 
 type mobileNav = {
   display: "mobile";
@@ -53,6 +54,9 @@ function Nav({ display, isShow, handleCloseNav }: navProps) {
         {/* Nav Links */}
         <div className="pt-6">
           <SearchInput />
+          <div className="mt-6">
+            <NavMenuList display="mobile" />
+          </div>
         </div>
       </div>
       <Overlay isShow={isShow} />

@@ -8,19 +8,16 @@ export default function useDetectOutsideClick(
   handler: Handler,
   listenCapturing: ListenCapturing = true
 ) {
-  useEffect(
-    function () {
-      function handleClick(e: MouseEvent) {
-        if (ref.current && !ref.current.contains(e.target as Node)) {
-          handler();
-        }
+  useEffect(() => {
+    function handleClick(e: MouseEvent) {
+      if (ref.current && !ref.current.contains(e.target as Node)) {
+        handler();
       }
+    }
 
-      document.addEventListener("click", handleClick, listenCapturing);
+    document.addEventListener("click", handleClick, listenCapturing);
 
-      return () =>
-        document.removeEventListener("click", handleClick, listenCapturing);
-    },
-    [ref, handler, listenCapturing]
-  );
+    return () =>
+      document.removeEventListener("click", handleClick, listenCapturing);
+  }, [ref, handler, listenCapturing]);
 }

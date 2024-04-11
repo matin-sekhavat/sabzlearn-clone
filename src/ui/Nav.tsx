@@ -33,7 +33,7 @@ function Nav({ display, isShow, handleCloseNav }: navProps) {
         ref={mobileRef}
         className={`fixed top-0 ${
           isShow ? "right-0" : "-right-64"
-        } bottom-0 p-4 w-64 transition-all  bg-white z-50`}
+        } bottom-0 p-4 w-64 transition-all  bg-white z-50 overflow-auto`}
       >
         {/* Upperside nav mobile btns & logo */}
         <div className="flex items-center  justify-between border-b pb-6 border-neutral-200">

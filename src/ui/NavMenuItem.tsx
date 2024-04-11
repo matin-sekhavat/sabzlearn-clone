@@ -7,21 +7,13 @@ type NavMenuItemProps = {
 };
 
 function NavMenuItem({ name, currentNav, onSelectedNav }: NavMenuItemProps) {
-  const handleSubMenu = () => {
-    if (currentNav === name) {
-      onSelectedNav("");
-    } else {
-      onSelectedNav(name);
-    }
-  };
-
   return (
     <li className="  ">
       <span
         className={`flex items-center justify-between cursor-pointer ${
           currentNav === name ? "text-green-700" : ""
         }`}
-        onClick={handleSubMenu}
+        onClick={() => onSelectedNav(name)}
       >
         <span>{name}</span>
         <span
